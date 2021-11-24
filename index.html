@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html>
+    
+    <head>
+        <meta charset ="utf-8">
+        <title>Library</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Your Library</h1>
+        </div>
+        <div>
+            <div></div>
+            <button class="addBook" id="addBook">Click to add a book</button>
+            <div></div>
+        </div>
+        <div class="popup" id="popup">
+            <h2>Add a New Book</h2>
+            <input type="text" placeholder = "Title" id="newTitle" class="field">
+            <input type="text" placeholder = "Author" id="newAuthor" class="field">
+            <input type="text" placeholder = "How many pages?" id="newPages" class="field">
+            <label for="read">Have you read it?</lable><input type="checkbox" id="newRead" class="field">
+            <div>
+                <button class="field" id="submit">Submit</button>
+            </div>
+        </div>
+        <div class="card" id="card">
+            <p id="cardTitle"></p>
+            <p id="cardAuthor"></p>
+            <p id="cardPages"></p>
+            <p id="cardRead"></p>
+        </div>
+
+    </body>
+
+    </html>
