@@ -14,27 +14,24 @@
             <h1>Your Library</h1>
         </div>
         <div>
-            <div></div>
             <button class="addBook" id="addBook">Click to add a book</button>
-            <div></div>
         </div>
         <div class="popup" id="popup">
-            <h2>Add a New Book</h2>
+            <h2 style="font-size:40px">Add a New Book</h2>
             <input type="text" placeholder = "Title" id="newTitle" class="field">
             <input type="text" placeholder = "Author" id="newAuthor" class="field">
             <input type="text" placeholder = "How many pages?" id="newPages" class="field">
-            <label for="read">Have you read it?</lable><input type="checkbox" id="newRead" class="field">
+            <div>
+                <input type="checkbox" id="newRead" class="checkbox">
+                <label for="newRead" style="font-size:30px">I've read this book.</label>
+            </div>
             <div>
                 <button class="field" id="submit">Submit</button>
+                <button id = "exit" class = "field">Close</button>
             </div>
         </div>
-        <div class="card" id="card">
-            <p id="cardTitle"></p>
-            <p id="cardAuthor"></p>
-            <p id="cardPages"></p>
-            <p id="cardRead"></p>
+        <div class="cardStack" id="cardStack">
         </div>
-
     </body>
 
     </html>

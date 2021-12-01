@@ -1,4 +1,6 @@
 body {
+    font-family: sans-serif;
+    background-color: #2b6777;;
     display:flex;
     flex-direction:column;
     text-align:center;
@@ -7,40 +9,87 @@ body {
     margin:0px;
 }
 
+button {
+    cursor:pointer;
+}
+
 .header {
-    background-color:skyblue;
+    color: #e4f1fe;
+    background-color:#34495e;
+    font-size:40px;
 }
 
 .addBook {
+    font-size:30px;
     font-style:25px;
-    border: solid black 3px;
+    color: #22313f;
+    background-color:#e4f1fe;
+    border: solid #22313f 3px;
+    border-radius: 10px;
     padding: 10px;
-    margin:10px;
+    margin:50px;
 }
 
 .popup {
+    color: #e4f1fe;
+    font-size: 20px;
     display:flex;
     flex-direction:column;
     justify-content:center;
     position:absolute;
     left: 50%;
-    top:50%;
+    top:40%;
     gap:10px;
-    margin-top:-200px;
-    margin-left:-200px;
-    height:400px;
+    margin-top: -100px;
+    margin-left:-225px;
+    height:550px;
     width:400px;
     padding:20px;
-    background-color:grey;
-    border: solid black 3px;
+    padding-top:0px;
+    background-color:#34495e;
+    border: solid #22313f 3px;
+    border-radius:10px;
     visibility:hidden;
     z-index:9;
 }
 
+.cardStack {
+    font-size: 30px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:left;
+    margin:10px;
+    gap: 10px;
+    align-items:center;
+}
+
+.cardStyle {
+    display:flex;
+    flex-direction:column;
+    line-height:0px;
+    padding:10px;
+    width: 300px;
+    gap:10px;
+    word-wrap:break-word;
+    border: solid #34495e 5px;
+    border-radius:3px;
+    background-color: #8dc6ff ;
+    color: #34495e;
+}
 
 .field {
     font-size:30px;
-    border: solid black 1px;
-    border-radius: 15px;
+    padding:10px;
+    border: solid #22313f 3px;
+    background-color:#e7f1fe;
+    border-radius: 5px;
     margin:5px;
+}
+
+.checkbox {
+    margin-top:10px;
+    margin-bottom:10px;
+    width: 23px;
+    height:23px;
 }

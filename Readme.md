@@ -5,6 +5,18 @@ This application is for The Odin Project's "Library" Project.
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
 -----------
+Version 0.2
+-----------
+
+Updates:
+
+- Spacing between cards, now stacked in a row.
+- Stylized interface.
+- Close button added to add book window.
+- Working "read" button added to book in display
+- Remove added but does not work.
+
+-----------
 Version 0.1
 -----------
 
