@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background-color: #2b6777;;
+    background-color: #2b6777;
     display:flex;
     flex-direction:column;
     text-align:center;
@@ -13,6 +13,10 @@ button {
     cursor:pointer;
 }
 
+p, h4 {
+    margin: 10px;
+}
+
 .header {
     color: #e4f1fe;
     background-color:#34495e;
@@ -20,14 +24,26 @@ button {
 }
 
 .addBook {
-    font-size:30px;
+    font-size:40px;
     font-style:25px;
+    width:auto;
+    height:auto;
     color: #22313f;
     background-color:#e4f1fe;
     border: solid #22313f 3px;
     border-radius: 10px;
     padding: 10px;
     margin:50px;
+    box-shadow:3px 3px;
+}
+
+.addBook:hover, .butt2:hover, .butt3:hover {
+    transform:translateY(1px);
+}
+
+.addBook:active, .butt2:active, .butt3:active {
+    transform:translateY(5px);
+    box-shadow: 0px 0px;
 }
 
 .popup {
@@ -67,15 +83,50 @@ button {
 .cardStyle {
     display:flex;
     flex-direction:column;
-    line-height:0px;
+    vertical-align:top;
     padding:10px;
-    width: 300px;
-    gap:10px;
+    width: 250px;
+    gap:2px;
+    height:auto;
+    white-space:pre-wrap;
     word-wrap:break-word;
     border: solid #34495e 5px;
-    border-radius:3px;
+    border-radius:10px;
     background-color: #8dc6ff ;
     color: #34495e;
+    box-shadow:5px 5px black;
+}
+
+.butts {
+    display:flex;
+    flex-direction:row;
+    gap:15px;
+    justify-content:center;
+    margin:15px;
+}
+
+.butt2 {
+    padding:15px;
+    width:120px;
+    font-size:20px;
+    font-family: sans-serif;
+    color: #22313f;
+    background-color:#e4f1fe;
+    border: solid #22313f 3px;
+    border-radius:10px;
+    box-shadow: 3px 3px;
+}
+
+.butt3 {
+    padding:15px;
+    width:150px;
+    font-size:30px;
+    font-family: sans-serif;
+    color: #22313f;
+    background-color:#e4f1fe;
+    border: solid #22313f 3px;
+    border-radius:10px;
+    box-shadow: 3px 3px;
 }
 
 .field {

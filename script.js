@@ -47,6 +47,7 @@ function submitBook() {
 
 function createCard(book) {
     const card = document.createElement("div");
+    const butts = document.createElement("div");
     const cardTitle = document.createElement("h4");
     const cardAuthor = document.createElement("p");
     const cardPages = document.createElement("p");
@@ -54,23 +55,31 @@ function createCard(book) {
     const remove = document.createElement("button");
     
         card.className="cardStyle";
-        cardTitle.textContent = book.title;
+        butts.className="butts";
+        remove.className="butt2";
+        cardRead.className="butt2";
+
+        cardTitle.textContent = '"' + book.title + '"';
         cardAuthor.textContent = book.author;
-        cardPages.textContent = book.pages;
+        cardPages.textContent = book.pages + " pages";
         cardRead.textContent = book.read;
         isRead(book.read, cardRead);
-        remove.textContent = "Remove";
+        remove.textContent = "Remove Book";
 
         card.appendChild(cardTitle);
         card.appendChild(cardAuthor);
         card.appendChild(cardPages);
-        card.appendChild(cardRead);
-        card.appendChild(remove);
+        card.appendChild(butts);
+        butts.appendChild(cardRead);
+        butts.appendChild(remove);
 
 
     document.getElementById("cardStack").appendChild(card);
+    
     cardRead.addEventListener("click", () =>
-    book.read = changeRead(book.read, cardRead));
+        book.read = changeRead(book.read, cardRead));
+    remove.addEventListener("click", () =>
+        card.remove());
 }
 
 function newBook(){
@@ -84,11 +93,11 @@ function newBook(){
 
 function isRead(e, button) {
     if (e === true) {
-        button.textContent = "Read";
+        button.textContent = "Read ✓";
     }
     else {
         e = false;
-        button.style.backgroundColor="red";
+        button.style.backgroundColor="salmon";
         button.textContent = "Not Read";
     }
 }
@@ -96,13 +105,13 @@ function isRead(e, button) {
 function changeRead(e, button){
     console.log(e);
     if (e === true) {
-        button.style.backgroundColor="red";
+        button.style.backgroundColor="salmon";
         button.textContent = "Not Read";
         return  false;
     }
     else {
-        button.textContent = "Read";
-        button.style.backgroundColor="white";
+        button.textContent = "Read ✓";
+        button.style.backgroundColor= "white";
         return true;
     }
 }

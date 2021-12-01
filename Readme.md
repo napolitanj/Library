@@ -5,6 +5,19 @@ This application is for The Odin Project's "Library" Project.
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
 -----------
+Version 1.0
+-----------
+
+Application is fully functional and stylized.
+
+Updates:
+
+- Working remove button.
+- Animated buttons on hover and click.
+- Text no longer overlaps on cards, wraps as needed.
+- Cards wrap as window is resized.
+
+-----------
 Version 0.2
 -----------
 
