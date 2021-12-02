@@ -5,6 +5,19 @@ This application is for The Odin Project's "Library" Project.
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
 -----------
+Version 1.1
+-----------
+
+Updates:
+
+- Application resets input fields each time the window is opened.
+- If fields are empty, the app alerts the user to complete them.
+
+Bug:
+
+Extra cards created after the first.
+
+-----------
 Version 1.0
 -----------
 

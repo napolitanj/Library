@@ -1,50 +1,61 @@
 const addBook = document.getElementById("addBook");
 const submit = document.getElementById("submit");
 const exit = document.getElementById("exit");
-let popup = document.getElementById("popup");
-
+const popup = document.getElementById("popup");
 let myLibrary = [];
 
 //Buttons to summon popup to add and submit new books
 addBook.addEventListener("click", ()=>
-    newBook(),
-    console.log(myLibrary));
+    newBook()); 
 submit.addEventListener("click", ()=>
     submitBook());
 exit.addEventListener("click", () =>
     newBook());
-
 
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    console.log(read);
     addToLibrary(this);
+}
+
+function resetFields() {
+    let fields = document.querySelectorAll(".field");
+    fields.forEach(function(aField) {
+        aField.value="";
+    })
 }
 
 function addToLibrary(book) {
     myLibrary.push(book);
-    createCard(book);
+    displayLibrary(book);
 }
 
 function displayLibrary() {
     for (let i=0; i < myLibrary.length; i++)
-    console.log(myLibrary);
+    createCard(myLibrary[i]);
 }
 
+//Window for book info entry
 function submitBook() {
+    
     let title = document.getElementById("newTitle").value;
     let author = document.getElementById("newAuthor").value;
     let pages = document.getElementById("newPages").value;
     let read = document.getElementById("newRead").checked;
+    console.log(title + author + pages)
+    if (title === ""|| author === "" || pages === "") {
+        alert("Please complete the forms");
+        return;
+    }
      
-    console.log(title + " by " + author + " is " + pages + " pages long. " + read);
     new Book(title,author,pages,read);
     popup.style.visibility = "hidden";
 }
 
+
+//Renders book card
 function createCard(book) {
     const card = document.createElement("div");
     const butts = document.createElement("div");
@@ -73,7 +84,6 @@ function createCard(book) {
         butts.appendChild(cardRead);
         butts.appendChild(remove);
 
-
     document.getElementById("cardStack").appendChild(card);
     
     cardRead.addEventListener("click", () =>
@@ -89,8 +99,10 @@ function newBook(){
     else {
         popup.style.visibility = "hidden";
     }
+    resetFields();
 }
 
+//"Read" button
 function isRead(e, button) {
     if (e === true) {
         button.textContent = "Read ✓";
@@ -115,6 +127,3 @@ function changeRead(e, button){
         return true;
     }
 }
-
-
-
