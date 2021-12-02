@@ -30,6 +30,12 @@ function resetFields() {
 function addToLibrary(book) {
     myLibrary.push(book);
     createCard(book);
+    sD();
+}
+
+function displayLibrary() {
+    for (let i=0; i<myLibrary.length; i++)
+    createCard(myLibrary[i]);
 }
 
 //Window for book info entry
@@ -84,8 +90,10 @@ function createCard(book) {
         book.read = changeRead(book.read, cardRead));
     remove.addEventListener("click", () =>
         card.remove());
+        sD();
 }
 
+//Toggles Add Book window visibility
 function newBook(){
     if (popup.style.visibility === "hidden") {
         popup.style.visibility = "visible";
@@ -100,11 +108,13 @@ function newBook(){
 function isRead(e, button) {
     if (e === true) {
         button.textContent = "Read ✓";
+        sD();
     }
     else {
         e = false;
         button.style.backgroundColor="salmon";
         button.textContent = "Not Read";
+        sD();
     }
 }
 
@@ -112,11 +122,26 @@ function changeRead(e, button){
     if (e === true) {
         button.style.backgroundColor="salmon";
         button.textContent = "Not Read";
+        sD();
         return  false;
     }
     else {
         button.textContent = "Read ✓";
         button.style.backgroundColor= "white";
+        sD();
         return true;
     }
 }
+
+//Store data
+function sD() {
+    localStorage.setItem('library', JSON.stringify(myLibrary));
+}
+
+//Load data
+function lD() {
+myLibrary = JSON.parse(localStorage.getItem('library'));
+displayLibrary();
+};
+
+lD();

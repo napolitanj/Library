@@ -5,6 +5,18 @@ This application is for The Odin Project's "Library" Project.
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
 -----------
+Version 1.3
+-----------
+
+Updates:
+
+- Stores locally.
+
+Bugs:
+
+Local storage does not recognize the removal of a card.
+
+-----------
 Version 1.2
 -----------
 
