@@ -29,12 +29,7 @@ function resetFields() {
 
 function addToLibrary(book) {
     myLibrary.push(book);
-    displayLibrary(book);
-}
-
-function displayLibrary() {
-    for (let i=0; i < myLibrary.length; i++)
-    createCard(myLibrary[i]);
+    createCard(book);
 }
 
 //Window for book info entry
@@ -44,9 +39,8 @@ function submitBook() {
     let author = document.getElementById("newAuthor").value;
     let pages = document.getElementById("newPages").value;
     let read = document.getElementById("newRead").checked;
-    console.log(title + author + pages)
     if (title === ""|| author === "" || pages === "") {
-        alert("Please complete the forms");
+        alert("Please complete all forms.");
         return;
     }
      
@@ -115,7 +109,6 @@ function isRead(e, button) {
 }
 
 function changeRead(e, button){
-    console.log(e);
     if (e === true) {
         button.style.backgroundColor="salmon";
         button.textContent = "Not Read";

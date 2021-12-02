@@ -5,6 +5,14 @@ This application is for The Odin Project's "Library" Project.
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
 -----------
+Version 1.2
+-----------
+
+Updates:
+
+- No extra cards.
+
+-----------
 Version 1.1
 -----------
 
