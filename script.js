@@ -89,8 +89,18 @@ function createCard(book) {
     cardRead.addEventListener("click", () =>
         book.read = changeRead(book.read, cardRead));
     remove.addEventListener("click", () =>
-        card.remove());
+        deleted(card,book));
+        
         sD();
+}
+
+//FINISH HERE
+function deleted(e,book){
+    let toDie = myLibrary.indexOf(book);
+    myLibrary.splice(toDie, 1);
+    cardStack.removeChild(e);
+    console.log(myLibrary);
+    sD();
 }
 
 //Toggles Add Book window visibility

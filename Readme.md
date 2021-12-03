@@ -5,6 +5,17 @@ This application is for The Odin Project's "Library" Project.
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
 -----------
+Version 2.0
+-----------
+
+Everything appears to be working as it should!
+
+Updates:
+
+- Local storage works properly, restoring the library after the window is refreshed or closes.
+- The application correctly deletes books, and adjusts the local storage accordingly.
+
+-----------
 Version 1.3
 -----------
 
