@@ -3,21 +3,24 @@ const submit = document.getElementById("submit");
 const exit = document.getElementById("exit");
 const popup = document.getElementById("popup");
 let myLibrary = [];
+let createBook;
 
 //Buttons to summon popup to add and submit new books
+newBook();
 addBook.addEventListener("click", ()=>
-    newBook()); 
+    newBook());
 submit.addEventListener("click", ()=>
     submitBook());
 exit.addEventListener("click", () =>
     newBook());
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    addToLibrary(this);
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function resetFields() {
@@ -27,12 +30,6 @@ function resetFields() {
     })
 }
 
-function addToLibrary(book) {
-    myLibrary.push(book);
-    createCard(book);
-    sD();
-}
-
 function displayLibrary() {
     for (let i=0; i<myLibrary.length; i++)
     createCard(myLibrary[i]);
@@ -40,17 +37,21 @@ function displayLibrary() {
 
 //Window for book info entry
 function submitBook() {
-    
+
     let title = document.getElementById("newTitle").value;
     let author = document.getElementById("newAuthor").value;
     let pages = document.getElementById("newPages").value;
     let read = document.getElementById("newRead").checked;
+
     if (title === ""|| author === "" || pages === "") {
         alert("Please complete all forms.");
         return;
     }
-     
-    new Book(title,author,pages,read);
+    
+    createBook = new Book(title, author, pages,read)
+    myLibrary.push(createBook);
+    createCard(createBook);
+    sD();
     popup.style.visibility = "hidden";
 }
 
@@ -94,7 +95,7 @@ function createCard(book) {
         sD();
 }
 
-//FINISH HERE
+//Deletes Book
 function deleted(e,book){
     let toDie = myLibrary.indexOf(book);
     myLibrary.splice(toDie, 1);
@@ -150,8 +151,8 @@ function sD() {
 
 //Load data
 function lD() {
-myLibrary = JSON.parse(localStorage.getItem('library'));
-displayLibrary();
+    myLibrary = JSON.parse(localStorage.getItem('library'));
+    displayLibrary();
 };
 
 lD();

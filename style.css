@@ -39,6 +39,7 @@ p, h4 {
 
 .addBook:hover, .butt2:hover, .butt3:hover {
     transform:translateY(1px);
+    box-shadow:2px 2px;
 }
 
 .addBook:active, .butt2:active, .butt3:active {

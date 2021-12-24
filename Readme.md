@@ -5,6 +5,12 @@ This application is for The Odin Project's "Library" Project.
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
 -----------
+Version 3.0
+-----------
+
+In accordance with the practice instructions for TOP classes lesson, modified the syntax to use Classes. A bug that required the user to double click the "Add a book" button was also fixed.
+
+-----------
 Version 2.0
 -----------
 
