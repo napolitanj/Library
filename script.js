@@ -1,7 +1,8 @@
 const addBook = document.getElementById("addBook");
 const submit = document.getElementById("submit");
 const exit = document.getElementById("exit");
-const popup = document.getElementById("popup");
+const popupBackground = document.getElementById("popupBackground")
+const popup = document.forms['popup'];
 let myLibrary = [];
 let createBook;
 
@@ -9,8 +10,8 @@ let createBook;
 newBook();
 addBook.addEventListener("click", ()=>
     newBook());
-submit.addEventListener("click", ()=>
-    submitBook());
+popup.addEventListener("submit", (e)=>
+    submitBook(e));
 exit.addEventListener("click", () =>
     newBook());
 
@@ -36,23 +37,20 @@ function displayLibrary() {
 }
 
 //Window for book info entry
-function submitBook() {
+function submitBook(e) {
 
-    let title = document.getElementById("newTitle").value;
-    let author = document.getElementById("newAuthor").value;
-    let pages = document.getElementById("newPages").value;
-    let read = document.getElementById("newRead").checked;
+    e.preventDefault();
 
-    if (title === ""|| author === "" || pages === "") {
-        alert("Please complete all forms.");
-        return;
-    }
+    let title = document.getElementById("newTitle");
+    let author = document.getElementById("newAuthor");
+    let pages = document.getElementById("newPages");
+    let read = document.getElementById("newRead");
     
-    createBook = new Book(title, author, pages,read)
+    createBook = new Book(title.value, author.value, pages.value,read.checked)
     myLibrary.push(createBook);
     createCard(createBook);
     sD();
-    popup.style.visibility = "hidden";
+    popupBackground.style.visibility = "hidden";
 }
 
 
@@ -106,11 +104,11 @@ function deleted(e,book){
 
 //Toggles Add Book window visibility
 function newBook(){
-    if (popup.style.visibility === "hidden") {
-        popup.style.visibility = "visible";
+    if (popupBackground.style.visibility === "hidden") {
+        popupBackground.style.visibility = "visible";
     }
     else {
-        popup.style.visibility = "hidden";
+        popupBackground.style.visibility = "hidden";
     }
     resetFields();
 }

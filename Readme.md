@@ -5,6 +5,12 @@ This application is for The Odin Project's "Library" Project.
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
 -----------
+Version 3.1
+-----------
+
+Added form validation as well as a background during object creation to prevent interface interaction while popup is present.
+
+-----------
 Version 3.0
 -----------
 
