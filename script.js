@@ -148,7 +148,12 @@ function sD() {
 
 //Load data
 function lD() {
-    myLibrary = JSON.parse(localStorage.getItem('library'));
+    const bookShelf = JSON.parse(localStorage.getItem('library'));
+    if (bookShelf) {
+        myLibrary = bookShelf;
+    } else {
+        myLibrary = []
+    }
     displayLibrary();
 };
 
@@ -161,3 +166,4 @@ function initializeNew() {
 }
 
 newBook();
+lD();
