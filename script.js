@@ -157,13 +157,5 @@ function lD() {
     displayLibrary();
 };
 
-function initializeNew() {
-    if (myLibrary !==null) {
-        lD();
-    } else {
-        console.log("else" + myLibrary)
-    }
-}
-
 newBook();
 lD();
