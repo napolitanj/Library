@@ -3,11 +3,10 @@ const submit = document.getElementById("submit");
 const exit = document.getElementById("exit");
 const popupBackground = document.getElementById("popupBackground")
 const popup = document.forms['popup'];
-let myLibrary = [];
 let createBook;
-
+let myLibrary = [];
 //Buttons to summon popup to add and submit new books
-newBook();
+
 addBook.addEventListener("click", ()=>
     newBook());
 popup.addEventListener("submit", (e)=>
@@ -153,4 +152,12 @@ function lD() {
     displayLibrary();
 };
 
-lD();
+function initializeNew() {
+    if (myLibrary !==null) {
+        lD();
+    } else {
+        console.log("else" + myLibrary)
+    }
+}
+
+newBook();
