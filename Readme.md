@@ -1,4 +1,4 @@
-Live Demo - https://napolitanj.github.io/Library/
+LIVE DEMO: https://napolitanj.github.io/Library/
 
 Library
 
