@@ -6,6 +6,19 @@ This application is for The Odin Project's "Library" Project.
 
 My goal with this project is to demonstrate and develop understanding of objects and object constructors.
 
+--------------------
+How to use this app:
+
+Click the "Add book" button to add a new book.
+
+When the add book window is open you will be unable to interact with other parts of the interface. You must include a title, author and number of pages to proceed.
+
+Once you've submitted a book, you will see it render in the interface. You can change the status of whether the book has been read or not by clicking the "Read/Not Read" button.
+
+Click "Remove Book" to remove a book.
+
+Your browser will store your data until you clear local storage.
+
 -----------
 Version 3.1
 -----------
